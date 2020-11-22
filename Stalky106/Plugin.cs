@@ -41,7 +41,7 @@ namespace Stalky106
 
 		public override void OnDisabled()
 		{
-			if (coroutines != null && coroutines.Count > 0) MEC.Timing.KillCoroutines(coroutines);
+			if (coroutines != null && coroutines.Count > 0) MEC.Timing.KillCoroutines(coroutines.ToArray());
 			if (events != null)
 			{
 				SvEvents.RoundStarted -= events.OnRoundStart;
