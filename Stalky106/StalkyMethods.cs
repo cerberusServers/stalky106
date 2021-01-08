@@ -7,7 +7,6 @@ using Exiled.API.Features;
 
 using UnityEngine;
 
-using scp035.API;
 
 using Random = UnityEngine.Random;
 
@@ -104,7 +103,7 @@ namespace Stalky106
 			}
 		}
 		// Wrapper for SCP-035
-		int? Scp035Id => Scp035Data.GetScp035()?.Id;
+		
 		public IEnumerator<float> StalkCoroutine(Player player)
 		{
 			List<Player> list = new List<Player>();
@@ -116,16 +115,7 @@ namespace Stalky106
 
 			foreach (Player plausibleTarget in Player.List)
 			{
-				if (StalkyPlugin.isScp035) 
-				{
-					try {
-						if (plausibleTarget.Id == Scp035Id) continue;
-					} 
-					catch (Exception ex) {
-						Log.Error("SCP035 threw an internal exception: ");
-						Log.Error(ex);
-					}
-				}
+		
 				if (!alwaysIgnore.Contains(plausibleTarget.Role)
 					&& !plugin.Config.Preferences.IgnoreRoles.Contains(plausibleTarget.Role)
 					&& !plugin.Config.Preferences.IgnoreTeams.Contains(plausibleTarget.Team))

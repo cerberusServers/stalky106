@@ -32,7 +32,7 @@ namespace Stalky106
 				Log.Info("Stalky106 is disabled via configs. It will not be loaded.");
 				return;
 			}
-			Check035();
+			
 			Log.Info("Prepare to face Larry...");
 			Methods = new StalkyMethods(this);
 			events = new EventHandlers(this);
@@ -59,19 +59,6 @@ namespace Stalky106
 			{
 				Log.Info("Larry won't ever stalk you again at night...");
 				base.OnDisabled();
-			}
-		}
-
-
-		internal void Check035()
-		{
-			foreach (var plugin in Loader.Plugins)
-			{
-				if (plugin.Name == "scp035")
-				{
-					isScp035 = true;
-					return;
-				}
 			}
 		}
 	}
