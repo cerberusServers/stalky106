@@ -115,7 +115,14 @@ namespace Stalky106
 
 			foreach (Player plausibleTarget in Player.List)
 			{
+<<<<<<< HEAD
 		
+=======
+
+				try {
+					if (plausibleTarget.Id == Scp035Id) continue;
+				} catch { }
+>>>>>>> upstream/master
 				if (!alwaysIgnore.Contains(plausibleTarget.Role)
 					&& !plugin.Config.Preferences.IgnoreRoles.Contains(plausibleTarget.Role)
 					&& !plugin.Config.Preferences.IgnoreTeams.Contains(plausibleTarget.Team))

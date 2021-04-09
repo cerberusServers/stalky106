@@ -7,20 +7,18 @@ using UnityEngine;
 using PlyEvents = Exiled.Events.Handlers.Player;
 using SvEvents = Exiled.Events.Handlers.Server;
 using ScpEvents = Exiled.Events.Handlers.Scp106;
-using Exiled.Loader;
 
 namespace Stalky106
 {
 	public class StalkyPlugin : Plugin<PluginConfig>
 	{
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "More visually appealing naming style")]
-		public const string VersionStr = "2.1.1";
+		public const string VersionStr = "2.2";
 		private readonly List<MEC.CoroutineHandle> coroutines = new List<MEC.CoroutineHandle>();
 		public void AddCoroutine(MEC.CoroutineHandle coroutineHandle) => coroutines.Add(coroutineHandle);
 		public void NewCoroutine(IEnumerator<float> coroutine, MEC.Segment segment = MEC.Segment.Update) => coroutines.Add(MEC.Timing.RunCoroutine(coroutine, segment));
 		public override string Prefix => "ST106";
 		public static readonly Vector3 pocketDimension = new Vector3(0f, -1998f, 0f);
-		public static bool isScp035 = false;
 
 		private EventHandlers events;
 		public StalkyMethods Methods { private set; get; }
@@ -32,7 +30,10 @@ namespace Stalky106
 				Log.Info("Stalky106 is disabled via configs. It will not be loaded.");
 				return;
 			}
+<<<<<<< HEAD
 			
+=======
+>>>>>>> upstream/master
 			Log.Info("Prepare to face Larry...");
 			Methods = new StalkyMethods(this);
 			events = new EventHandlers(this);
