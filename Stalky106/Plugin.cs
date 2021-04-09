@@ -30,10 +30,6 @@ namespace Stalky106
 				Log.Info("Stalky106 is disabled via configs. It will not be loaded.");
 				return;
 			}
-<<<<<<< HEAD
-			
-=======
->>>>>>> upstream/master
 			Log.Info("Prepare to face Larry...");
 			Methods = new StalkyMethods(this);
 			events = new EventHandlers(this);
